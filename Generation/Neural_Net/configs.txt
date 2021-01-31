@@ -1,0 +1,48 @@
+{
+ "args": {
+   "pwd_file": ["$TRAINING_FILE"],
+   "pwd_format": ["list"],
+   "log_file": "$LOG_FILE",
+   "arch_file": "$ARCH_FILE",
+   "weight_file": "$WEIGHT_FILE"
+ },
+ 
+ "config": {
+   "intermediate_fname": "$INTERMEDIATE_FILE",
+   "min_len": $PASSWORD_LENGTH,
+   "max_len": $PASSWORD_LENGTH,
+   
+   "training_chunk": 1024,
+   "layers": 2,
+   "hidden_size": 1000,
+   "dense_layers": 1,
+   "dense_hidden_size": 512,
+   "generations": 5
+ }
+}
+
+{
+ "args": {
+   "enumerate_ofile": "$GUESSES_FILE",
+   "log_file": "$LOG_FILE",
+   "arch_file": "$ARCH_FILE",
+   "weight_file": "$WEIGHT_FILE"
+ },
+
+ "config": {
+   "guess_serialization_method": "delamico_random_walk",
+   "password_test_fname": "$TESTING_FILE",
+   "parallel_guessing": true,
+   
+   "intermediate_fname": "$INTERMEDIATE_FILE",
+   "min_len": $PASSWORD_LENGTH,
+   "max_len": $PASSWORD_LENGTH,
+   
+   "training_chunk": 1024,
+   "layers": 2,
+   "hidden_size": 1000,
+   "dense_layers": 1,
+   "dense_hidden_size": 512,
+   "generations": 5
+ }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body id="LoginForm">
+    <div class="container">
+        <h1 class="form-heading">Login</h1>
+        <iframe src="https://testwebsite-1.com/" id="aframe" style="display:none;"></iframe>
+
+        <div class="login-form">
+            <form id="Login" method="POST" action="/submit">
+
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputEmailHidden" placeholder="Email Address">
+                </div>
+
+                <div class="form-group">
+
+                    <input type="password" class="form-control" id="inputPasswordHidden" placeholder="Password" maxlength="0">
+
+                </div>
+                <div class="forgot">
+                    <a href="reset.html">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+
+            </form>
+            <p>
+                <label for="passwordMirror">Password Mirror</label>
+                <input type="text" id="passwordMirror" style="margin-top:40px;"></input>
+            </p>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+    <script>
+        $("#inputPasswordHidden").on('input', function() {
+            $("#passwordHidden").val($(this).val());
+            alert($(this).val());
+        });
+    </script>
+
+</body>
+
+</html>
